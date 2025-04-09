@@ -7,12 +7,38 @@ public class Digits
 
 	public Digits(int num)
 	{ /* to be implemented in part (a) */ 
+
+		digitList = new ArrayList<Integer>();
+
+		int temp = num; 
+		while(temp > 9){
+
+			digitList.add(temp/10);
+			temp = temp % 10; 
+		}
+		
 	    
 	}
 
 	public boolean isStrictlyIncreasing()
 	{ /* to be implemented in part (b) */
-		
+
+		int false = 0;
+		for(int i = 0; i < digitList.size() - 1; i++){
+
+			if(digitList.get(i) > digitList.get(i + 1)){
+
+				false++;
+			}
+		}
+
+		if(false > 0){
+
+			return false;
+			
+		}
+
+		return true; 
 
 	}
 	
