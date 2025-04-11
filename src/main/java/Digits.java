@@ -4,17 +4,20 @@ public class Digits
 {
 
 	private ArrayList<Integer> digitList;
+	
 
 	public Digits(int num)
 	{ /* to be implemented in part (a) */ 
 
 		digitList = new ArrayList<Integer>();
+		digitList.add(0, new Integer(num % 10));
+		
+		int temp = num / 10; 
+		
+		while(temp > 0){
 
-		int temp = num; 
-		while(temp > 9){
-
-			digitList.add(temp/10);
-			temp = temp % 10; 
+			digitList.add(0, new Integer(temp % 10));
+			temp = temp / 10; 
 		}
 		
 	    
